@@ -1,0 +1,81 @@
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(232, 232, 255, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.accordeon {
+    padding: 30px;
+    max-width: 800px;
+}
+.accordeon .box {
+    position: relative;
+    margin-bottom: 5px;
+}
+.accordeon .label {
+    position: relative;
+    padding: 20px;
+    background: darkslategray;
+    color: #fff;
+    cursor: pointer;
+}
+
+.accordeon .box .label::after {
+    content: '';
+    width: 40px; height: 40px;
+    background: url("plus_PNG106.png") 0 0/ cover no-repeat;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    transition: .2s;
+}
+.accordeon .box.active .label::after {
+    content: "";
+    /*font-size: 13px;*/
+    transform: translate(0, -50%) rotate(-45deg);
+}
+.content {
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s;
+}
+.content p {
+    padding: 20px;
+}
+
+.accordion {
+    max-width: 800px;
+    padding: 30px;
+}
+.accordion .blockbutton {
+    margin: 5px 0;
+    cursor: pointer;
+}
+.accordion .blockbutton .title {
+    padding: 20px;
+    background: darkslategray;
+    color: #fff;
+}
+.accordion .blockbutton .text {
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s;
+    background: beige;
+}
+.accordion .blockbutton .text p {
+    padding: 0 20px;
+}
